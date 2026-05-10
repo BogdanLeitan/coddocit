@@ -1,0 +1,259 @@
+:root {
+  --red: #e8412a;
+  --bg: #0d0d0f;
+  --bg2: #111113;
+  --bg3: #15151a;
+  --card: #111113;
+  --border: rgba(255, 255, 255, .08);
+  --text: #e8e8ec;
+  --muted: #686e7a;
+  --sans: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+/* ── NAV (from original header-component) ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .95rem 2rem;
+  background: rgba(13, 13, 15, .9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--mono);
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: .74rem;
+  color: var(--muted);
+  transition: color .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
+
+.nav-actions {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+}
+
+.btn-ghost {
+  font-family: var(--mono);
+  font-size: .72rem;
+  padding: .38rem .95rem;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition: border-color .2s, color .2s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--red);
+  color: var(--text);
+}
+
+.btn-red {
+  font-family: var(--mono);
+  font-size: .72rem;
+  padding: .38rem .95rem;
+  border-radius: 5px;
+  background: var(--red);
+  color: #fff;
+  border: 1px solid var(--red);
+  transition: opacity .2s;
+}
+
+.btn-red:hover {
+  opacity: .85;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-top: 52px;
+}
+
+.sec-label {
+  font-family: var(--mono);
+  font-size: .66rem;
+  color: var(--red);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: .7rem;
+}
+
+.sec-title {
+  font-size: clamp(1.8rem, 4vw, 2.9rem);
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: .8rem;
+}
+
+.sec-title b {
+  font-weight: 600;
+}
+
+.sec-sub {
+  font-family: var(--mono);
+  font-size: .76rem;
+  color: var(--muted);
+  max-width: 440px;
+  line-height: 1.85;
+}
+
+/* ── SEARCH BAR ── */
+.search-wrap {
+  margin: 2rem 0 0;
+  position: relative;
+  max-width: 100%;
+  height: 45px;
+}
+
+.search-icon {
+  position: absolute;
+  left: .9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: .56rem 2.6rem .56rem 2.4rem;
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.search-input:focus {
+  border-color: rgba(42, 86, 232, 0.4);
+  box-shadow: 0 0 0 3px rgba(42, 93, 232, 0.07);
+}
+
+.search-clear {
+  position: absolute;
+  right: .75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .85rem;
+  padding: .2rem;
+  display: none;
+  font-family: var(--mono);
+  transition: color .2s;
+}
+
+.search-clear:hover {
+  color: var(--text);
+}
+
+/* ── FILTERS (exact from original) ── */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.fb {
+  font-family: var(--mono);
+  font-size: .7rem;
+  padding: .28rem .82rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .18s;
+}
+
+.fb:hover,
+.fb.on {
+  border-color: var(--red);
+  color: var(--red);
+  background: rgba(42, 102, 232, .07);
+}
+
+/* ── RESULTS META ── */
+.results-meta {
+  font-family: var(--mono);
+  font-size: .66rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.results-meta span {
+  color: var(--red);
+}
+
+/* ── PROJECT GRID (exact from original) ── */
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.1rem;
+}
+
+
+
+/* ── NO RESULTS ── */
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 5rem 2rem;
+  font-family: var(--mono);
+}
+
+.no-results.show {
+  display: block;
+}
+
+.no-results-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.no-results h3 {
+  font-size: .95rem;
+  font-weight: 600;
+  margin-bottom: .4rem;
+}
+
+.no-results p {
+  font-size: .72rem;
+  color: var(--muted);
+}

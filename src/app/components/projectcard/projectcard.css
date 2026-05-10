@@ -1,0 +1,124 @@
+.pcard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.pcard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transition: transform .3s;
+  transform-origin: left;
+}
+
+.pcard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(42, 105, 232, .25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .4);
+}
+
+.pcard:hover::before {
+  transform: scaleX(1);
+}
+
+.pc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: .9rem;
+}
+
+.pc-icon {
+  font-size: 1.5rem;
+}
+
+.pc-diff {
+  font-family: var(--mono);
+  font-size: .62rem;
+  padding: .17rem .52rem;
+  border-radius: 3px;
+  letter-spacing: .3px;
+}
+
+.d-b {
+  background: rgba(74, 222, 128, .08);
+  color: #6ee7a0;
+  border: 1px solid rgba(74, 222, 128, .15);
+}
+
+.d-m {
+  background: rgba(251, 191, 36, .08);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, .15);
+}
+
+.d-a {
+  background: rgba(42, 86, 232, .1);
+  color: #719ef8;
+  border: 1px solid rgba(42, 93, 232, .2);
+}
+
+.pc-title {
+  font-size: .97rem;
+  font-weight: 600;
+  margin-bottom: .35rem;
+}
+
+.pc-desc {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 1.1rem;
+}
+
+.pc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin-bottom: 1.1rem;
+}
+
+.ptag {
+  font-family: var(--mono);
+  font-size: .62rem;
+  padding: .15rem .5rem;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.pc-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: .9rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: .68rem;
+  color: var(--muted);
+}
+
+.lang-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ldot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
